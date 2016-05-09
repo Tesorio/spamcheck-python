@@ -14,15 +14,15 @@ def _parse_response(response):
 
 
 def check(email, report=False):
-    data = {
-        'email': email,
-        'options': 'long' if report else 'short'
-    }
+    options = '"long"' if report else '"short"'
     headers = {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
     }
 
-    response = requests.post(API_URL, data, headers=headers)
+    data = '{"email":"'+ email + '", "options":' + options + '}'
+
+    response = requests.post(API_URL, headers=headers, data=data)
 
     return _parse_response(response)
+
