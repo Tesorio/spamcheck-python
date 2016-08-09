@@ -1,3 +1,4 @@
+import json
 import requests
 
 API_URL = 'http://spamcheck.postmarkapp.com/filter'
@@ -23,6 +24,6 @@ def check(email, report=False):
         'Content-Type': 'application/json'
     }
 
-    response = requests.post(API_URL, data, headers=headers)
+    response = requests.post(API_URL, json.dumps(data), headers=headers)
 
     return _parse_response(response)
