@@ -5,7 +5,10 @@ API_URL = 'http://spamcheck.postmarkapp.com/filter'
 
 
 def _parse_response(response):
-    content = response.json()
+    try:
+        content = response.json()
+    except Exception:
+        raise Exception('API Error. Spamcheck may be down.')
 
     if response.status_code != 200 or not content.get('success'):
         error_msg = content.get('message', 'API Error')
