@@ -1,7 +1,7 @@
 import json
 import requests
 
-API_URL = 'http://spamcheck.postmarkapp.com/filter'
+API_URL = 'https://spamcheck.postmarkapp.com/filter'
 
 
 def _parse_response(response):
