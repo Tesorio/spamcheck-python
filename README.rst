@@ -23,6 +23,15 @@ Usage
     score = result['score']
     report = result['report']
 
+Publishing
+----------
+
+.. code:: bash
+
+    $ pip install build twine
+    $ python -m build
+    $ twine upload dist/*
+
 License
 -------
 

@@ -4,10 +4,10 @@ import sys
 
 from setuptools import setup, find_packages
 
-version = '1.0.3'
+version = '1.0.4'
 
 if sys.argv[-1] == 'publish':
-    os.system('python setup.py sdist bdist_wheel')
+    os.system('python setup.py build')
     os.system('twine upload dist/*')
     sys.exit()
 
